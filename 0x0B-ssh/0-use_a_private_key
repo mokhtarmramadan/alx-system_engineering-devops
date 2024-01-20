@@ -4,7 +4,6 @@
 # Define variables
 private_key_path="~/.ssh/school"
 user="ubuntu"
-server_ip="52.3.253.239"
 
 # Connect using ssh
-ssh -i $private_key_path $user@$server_ip
+ssh user -i $private_key_path=
