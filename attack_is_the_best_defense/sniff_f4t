@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Sniffs free4talk traffic
-sudo tcpdump -i eno1 -v host free4talk.com
