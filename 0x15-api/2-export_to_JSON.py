@@ -5,9 +5,9 @@ script that, using this REST API, for a given employee ID
 returns information about his/her list progress """
 
 import csv
+import json
 import requests
 from sys import argv
-import json
 
 if __name__ == '__main__':
     api_url = "https://jsonplaceholder.typicode.com/"
