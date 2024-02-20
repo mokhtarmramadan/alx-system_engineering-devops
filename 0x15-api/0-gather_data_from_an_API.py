@@ -4,11 +4,10 @@
 script that, using this REST API, for a given employee ID
 returns information about his/her list progress """
 
-if __name__ == '__main__':
-    import requests
-    import json
-    from sys import argv
+import requests
+from sys import argv
 
+if __name__ == '__main__':
     api_url = "https://jsonplaceholder.typicode.com/"
     user_id = argv[1]
     try:
@@ -31,7 +30,7 @@ if __name__ == '__main__':
                 print("Employee {} is done with tasks({}/{}):".format(
                         user_name, completed_tasks_counter, total_tasks))
                 for title in completed_tasks:
-                    print("   {}".format(title))
+                    print("\t {}".format(title))
             else:
                 print("fail {}", response.status_code)
 
