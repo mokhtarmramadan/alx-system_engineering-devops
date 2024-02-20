@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-# script that, using this REST API, for a given employee ID
-# returns information about his/her list progress.
+
+"""
+script that, using this REST API, for a given employee ID
+returns information about his/her list progress """
+
 if __name__ == '__main__':
     import requests
     import json
