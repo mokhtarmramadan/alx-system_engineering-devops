@@ -22,9 +22,9 @@ if __name__ == '__main__':
             if response.status_code == 200:
                 tasks = response.json()
                 csv_file = '{}.csv'.format(user_id)
-                
+
                 with open(csv_file, 'w', newline='') as f:
-                    writer = csv.writer(f)
+                    writer = csv.writer(f, quoting=csv.QUOTE_ALL)
                     for task in tasks:
                         row = []
                         row.append(user_id)
