@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 ''' Script that queries reddits API '''
 import requests
-import json
 
 
 def top_ten(subreddit):
