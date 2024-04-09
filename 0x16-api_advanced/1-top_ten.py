@@ -4,20 +4,19 @@ import requests
 import json
 
 
-def number_of_subscribers(subreddit):
-    ''' Returns the number of subscribers for a given subreddit '''
-    header = {'User-Agent': 'script1.0/by/mokhtarm.ramadan'}
-    resource = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+def top_ten(subreddit):
+    ''' prints the titles of the first 10 hot posts listed
+     for a given subreddit '''
+    header = {'User-Agent': "script1.1/by/mokhtarmramadan"}
+    resource = f'https://www.reddit.com/r/{subreddit}/top.json?limit=10'
+
     response = requests.get(resource, header, allow_redirects=False)
 
     if response.status_code == 200:
-        subreddit_info = response.json()
+        response = response.json()
 
-        subreddit_data = subreddit_info.get('data', 0)
-        if subreddit_data == 0:
-            return 0
-        subreddit_subs = subreddit_data['subscribers']
-        return subreddit_subs
-
+        posts = response['data']['children']
+        for post in posts:
+            print(post['data']['title'])
     else:
         return 0
