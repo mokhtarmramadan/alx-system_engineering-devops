@@ -6,7 +6,7 @@ import requests
 
 def number_of_subscribers(subreddit):
     ''' Returns the number of subscribers for a given subreddit '''
-    header = {'User-Agent': 'script1.0/by/mokhtarm.ramadan'}
+    header = {"User-Agent": "Mozilla/5.0"}
     resource = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     response = requests.get(resource, header, allow_redirects=False)
 
